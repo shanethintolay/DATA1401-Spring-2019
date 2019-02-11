@@ -20,6 +20,20 @@ row_map=dict(zip(row_names,range(size)))
 column_names=map(str,range(1,size+1))
 column_map=dict(zip(column_names,range(size)))
 
+left_move=0
+right_move=1
+
+player_1_left_move=(1,1)
+player_1_right_move=(1,-1)
+
+player_2_left_move=(-1,-1)
+player_2_right_move=(-1,1)
+
+moves={ player_1: {left_move: player_1_left_move, 
+                   right_move:player_1_right_move},
+        player_2: {left_move: player_2_left_move, 
+                   right_move: player_2_right_move}}
+
 
 def make_game_board(size=8):
     # Make an empty board
@@ -39,10 +53,6 @@ def make_game_board(size=8):
     
     return board
 
-moves={ player_1: {left_move: player_1_left_move, 
-                   right_move:player_1_right_move},
-        player_2: {left_move: player_2_left_move, 
-                   right_move: player_2_right_move}}
 
 
 def print_message(message,verbose=True):
